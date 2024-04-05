@@ -3,7 +3,7 @@ import { Container } from 'inversify';
 import { setupTestsHelper } from 'src/tests/helpers/setup.helper';
 import { Server } from '@cosmoosjs/hono-openapi';
 
-describe('User Controller', () => {
+describe('Index Controller', () => {
   const container = new Container();
 
   beforeAll(() => {
