@@ -9,8 +9,12 @@ import { ENV_STATE_ENUM, Environment } from "@cosmoosjs/core";
  * 
  * For more information on the zod api
  * @link https://zod.dev/
- */ 
+ */
 export default {
   ENV: Environment.validator.nativeEnum(ENV_STATE_ENUM),
+  JWT_TOKEN: Environment.validator.string(),
+  ORIGINS: Environment.validator.string(),
   PORT: Environment.validator.string().transform(Number),
+  REDIS_URL: Environment.validator.string(),
+  SENTRY_DSN: Environment.validator.string(),
 }

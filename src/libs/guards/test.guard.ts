@@ -1,6 +1,7 @@
-import { GuardAbstract } from '@cosmoosjs/hono-openapi';
-import { inject, injectable } from 'inversify';
 import { LoggerService } from '@cosmoosjs/core';
+import { GuardAbstract } from '@cosmoosjs/hono-openapi';
+import type { Context } from 'hono';
+import { inject, injectable } from 'inversify';
 
 @injectable()
 export class TestGuard extends GuardAbstract {
@@ -8,7 +9,7 @@ export class TestGuard extends GuardAbstract {
     super();
   }
 
-  public run(_ctx: any): void {
+  public run(_ctx: Context): void {
     this.loggerService.pino.info('Guard triggered');
   }
 }
