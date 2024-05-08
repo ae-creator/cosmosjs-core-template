@@ -55,8 +55,8 @@ boostrapApp().then((httpConfig) => {
   const controllerRoot = IocContainer.container.get(ControllerRoot);
   try {
     serve({
-      async fetch(req) {
-        const serverConfig = await httpConfig?.fetch(req);
+      async fetch(req, server) {
+        const serverConfig = await httpConfig?.fetch(req, { ip: server.requestIP(req) });
         return serverConfig;
       },
       port: httpConfig?.port,
